@@ -1,26 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="svg5072" inkscape:version="0.92.1 r15371" sodipodi:docname="mqtt.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320 640"
+	 style="enable-background:new 0 0 320 640;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ECECEC;}
+	.st1{fill:#333333;}
+	.st2{fill:#D45500;}
+	.st3{fill:#999999;}
+	.st4{fill:#E9C6AF;fill-opacity:0.7985;}
+	.st5{font-family:'ArialMT';}
+	.st6{font-size:17.9563px;}
+</style>
 
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="320"
-   height="640"
-   viewBox="0 0 84.666665 169.33334"
-   version="1.1"
-   id="svg5072"
-   inkscape:version="0.92.1 r15371"
-   sodipodi:docname="mqtt.svg">
-  <script
-     id="script5621">console.log('howdy');
+
+	<script  id="script5621">console.log(&apos;howdy&apos;);
 Messaging=function(e){function c(e){var t=e[0];var n=t&gt;&gt;4;var i=t&amp;=15;var s=1;var o;var u=0;var a=1;do{o=e[s++];u+=(o&amp;127)*a;a*=128}while((o&amp;128)!=0);var f=new l(n);switch(n){case r.CONNACK:f.topicNameCompressionResponse=e[s++];f.returnCode=e[s++];break;case r.PUBLISH:var c=i&gt;&gt;1&amp;3;var h=d(e,s);s+=2;var p=y(e,s,h);s+=h;if(c&gt;0){f.messageIdentifier=d(e,s);s+=2}var v=new Messaging.Message(e.subarray(s));if((i&amp;1)==1)v.retained=true;if((i&amp;8)==8)v.duplicate=true;v.qos=c;v.destinationName=p;f.payloadMessage=v;break;case r.PUBACK:case r.PUBREC:case r.PUBREL:case r.PUBCOMP:case r.UNSUBACK:f.messageIdentifier=d(e,s);break;case r.SUBACK:f.messageIdentifier=d(e,s);s+=2;f.grantedQos=e.subarray(s);break;default:}return f}function h(e,t,n){t[n++]=e&gt;&gt;8;t[n++]=e%256;return n}function p(e,t,n,r){r=h(t,n,r);g(e,n,r);return r+t}function d(e,t){return 256*e[t]+e[t+1]}function v(e){var t=new Array(1);var n=0;do{var r=e%128;e=e&gt;&gt;7;if(e&gt;0){r|=128}t[n++]=r}while(e&gt;0&amp;&amp;n&lt;4);return t}function m(e){var t=0;for(var n=0;n&lt;e.length;n++){var r=e.charCodeAt(n);if(r&gt;2047){if(55296&lt;=r&amp;&amp;r&lt;=56319){n++;t++}t+=3}else if(r&gt;127)t+=2;else t++}return t}function g(e,t,n){var r=n;for(var i=0;i&lt;e.length;i++){var s=e.charCodeAt(i);if(55296&lt;=s&amp;&amp;s&lt;=56319){lowCharCode=e.charCodeAt(++i);if(isNaN(lowCharCode)){throw new Error(a(o.MALFORMED_UNICODE,[s,lowCharCode]))}s=(s-55296&lt;&lt;10)+(lowCharCode-56320)+65536}if(s&lt;=127){t[r++]=s}else if(s&lt;=2047){t[r++]=s&gt;&gt;6&amp;31|192;t[r++]=s&amp;63|128}else if(s&lt;=65535){t[r++]=s&gt;&gt;12&amp;15|224;t[r++]=s&gt;&gt;6&amp;63|128;t[r++]=s&amp;63|128}else{t[r++]=s&gt;&gt;18&amp;7|240;t[r++]=s&gt;&gt;12&amp;63|128;t[r++]=s&gt;&gt;6&amp;63|128;t[r++]=s&amp;63|128}}return t}function y(e,t,n){var r=&quot;&quot;;var i;var s=t;while(s&lt;t+n){var u=e[s++];if(u&lt;128)i=u;else{var f=e[s++]-128;if(f&lt;0)throw new Error(a(o.MALFORMED_UTF,[u.toString(16),f.toString(16),&quot;&quot;]));if(u&lt;224)i=64*(u-192)+f;else{var l=e[s++]-128;if(l&lt;0)throw new Error(a(o.MALFORMED_UTF,[u.toString(16),f.toString(16),l.toString(16)]));if(u&lt;240)i=4096*(u-224)+64*f+l;else{var c=e[s++]-128;if(c&lt;0)throw new Error(a(o.MALFORMED_UTF,[u.toString(16),f.toString(16),l.toString(16),c.toString(16)]));if(u&lt;248)i=262144*(u-240)+4096*f+64*l+c;else throw new Error(a(o.MALFORMED_UTF,[u.toString(16),f.toString(16),l.toString(16),c.toString(16)]))}}}if(i&gt;65535){i-=65536;r+=String.fromCharCode(55296+(i&gt;&gt;10));i=56320+(i&amp;1023)}r+=String.fromCharCode(i)}return r}var t=&quot;0.0.0.0&quot;;var n=&quot;@BUILDLEVEL@&quot;;var r={CONNECT:1,CONNACK:2,PUBLISH:3,PUBACK:4,PUBREC:5,PUBREL:6,PUBCOMP:7,SUBSCRIBE:8,SUBACK:9,UNSUBSCRIBE:10,UNSUBACK:11,PINGREQ:12,PINGRESP:13,DISCONNECT:14};var i=function(e,t){for(key in e){if(e.hasOwnProperty(key)){if(t.hasOwnProperty(key)){if(typeof e[key]!==t[key])throw new Error(a(o.INVALID_TYPE,[typeof e[key],key]))}else{var n=&quot;Unknown property, &quot;+key+&quot;. Valid properties are:&quot;;for(key in t)if(t.hasOwnProperty(key))n=n+&quot; &quot;+key;throw new Error(n)}}}};var s=function(e,t){return function(){return e.apply(t,arguments)}};var o={OK:{code:0,text:&quot;AMQJSC0000I OK.&quot;},CONNECT_TIMEOUT:{code:1,text:&quot;AMQJSC0001E Connect timed out.&quot;},SUBSCRIBE_TIMEOUT:{code:2,text:&quot;AMQJS0002E Subscribe timed out.&quot;},UNSUBSCRIBE_TIMEOUT:{code:3,text:&quot;AMQJS0003E Unsubscribe timed out.&quot;},PING_TIMEOUT:{code:4,text:&quot;AMQJS0004E Ping timed out.&quot;},INTERNAL_ERROR:{code:5,text:&quot;AMQJS0005E Internal error.&quot;},CONNACK_RETURNCODE:{code:6,text:&quot;AMQJS0006E Bad Connack return code:{0} {1}.&quot;},SOCKET_ERROR:{code:7,text:&quot;AMQJS0007E Socket error:{0}.&quot;},SOCKET_CLOSE:{code:8,text:&quot;AMQJS0008I Socket closed.&quot;},MALFORMED_UTF:{code:9,text:&quot;AMQJS0009E Malformed UTF data:{0} {1} {2}.&quot;},UNSUPPORTED:{code:10,text:&quot;AMQJS0010E {0} is not supported by this browser.&quot;},INVALID_STATE:{code:11,text:&quot;AMQJS0011E Invalid state {0}.&quot;},INVALID_TYPE:{code:12,text:&quot;AMQJS0012E Invalid type {0} for {1}.&quot;},INVALID_ARGUMENT:{code:13,text:&quot;AMQJS0013E Invalid argument {0} for {1}.&quot;},UNSUPPORTED_OPERATION:{code:14,text:&quot;AMQJS0014E Unsupported operation.&quot;},INVALID_STORED_DATA:{code:15,text:&quot;AMQJS0015E Invalid data in local storage key={0} value={1}.&quot;},INVALID_MQTT_MESSAGE_TYPE:{code:16,text:&quot;AMQJS0016E Invalid MQTT message type {0}.&quot;},MALFORMED_UNICODE:{code:17,text:&quot;AMQJS0017E Malformed Unicode string:{0} {1}.&quot;}};var u={0:&quot;Connection Accepted&quot;,1:&quot;Connection Refused: unacceptable protocol version&quot;,2:&quot;Connection Refused: identifier rejected&quot;,3:&quot;Connection Refused: server unavailable&quot;,4:&quot;Connection Refused: bad user name or password&quot;,5:&quot;Connection Refused: not authorized&quot;};var a=function(e,t){var n=e.text;if(t){for(var r=0;r&lt;t.length;r++){field=&quot;{&quot;+r+&quot;}&quot;;start=n.indexOf(field);if(start&gt;0){var i=n.substring(0,start);var s=n.substring(start+field.length);n=i+t[r]+s}}}return n};var f=[0,6,77,81,73,115,100,112,3];var l=function(e,t){this.type=e;for(name in t){if(t.hasOwnProperty(name)){this[name]=t[name]}}};l.prototype.encode=function(){var e=(this.type&amp;15)&lt;&lt;4;remLength=0;topicStrLength=new Array;if(this.messageIdentifier!=undefined)remLength+=2;switch(this.type){case r.CONNECT:remLength+=f.length+3;remLength+=m(this.clientId)+2;if(this.willMessage!=undefined){remLength+=m(this.willMessage.destinationName)+2;var t=this.willMessage.payloadBytes;if(!(t instanceof Uint8Array))t=new Uint8Array(i);remLength+=t.byteLength+2}if(this.userName!=undefined)remLength+=m(this.userName)+2;if(this.password!=undefined)remLength+=m(this.password)+2;break;case r.SUBSCRIBE:e|=2;for(var n=0;n&lt;this.topics.length;n++){topicStrLength[n]=m(this.topics[n]);remLength+=topicStrLength[n]+2}remLength+=this.requestedQos.length;break;case r.UNSUBSCRIBE:e|=2;for(var n=0;n&lt;this.topics.length;n++){topicStrLength[n]=m(this.topics[n]);remLength+=topicStrLength[n]+2}break;case r.PUBLISH:if(this.payloadMessage.duplicate)e|=8;e=e|=this.payloadMessage.qos&lt;&lt;1;if(this.payloadMessage.retained)e|=1;destinationNameLength=m(this.payloadMessage.destinationName);remLength+=destinationNameLength+2;var i=this.payloadMessage.payloadBytes;remLength+=i.byteLength;if(i instanceof ArrayBuffer)i=new Uint8Array(i);else if(!(i instanceof Uint8Array))i=new Uint8Array(i.buffer);break;case r.DISCONNECT:break;default:}var s=v(remLength);var o=s.length+1;var u=new ArrayBuffer(remLength+o);var a=new Uint8Array(u);a[0]=e;a.set(s,1);if(this.type==r.PUBLISH)o=p(this.payloadMessage.destinationName,destinationNameLength,a,o);else if(this.type==r.CONNECT){a.set(f,o);o+=f.length;var l=0;if(this.cleanSession)l=2;if(this.willMessage!=undefined){l|=4;l|=this.willMessage.qos&lt;&lt;3;if(this.willMessage.retained){l|=32}}if(this.userName!=undefined)l|=128;if(this.password!=undefined)l|=64;a[o++]=l;o=h(this.keepAliveInterval,a,o)}if(this.messageIdentifier!=undefined)o=h(this.messageIdentifier,a,o);switch(this.type){case r.CONNECT:o=p(this.clientId,m(this.clientId),a,o);if(this.willMessage!=undefined){o=p(this.willMessage.destinationName,m(this.willMessage.destinationName),a,o);o=h(t.byteLength,a,o);a.set(t,o);o+=t.byteLength}if(this.userName!=undefined)o=p(this.userName,m(this.userName),a,o);if(this.password!=undefined)o=p(this.password,m(this.password),a,o);break;case r.PUBLISH:a.set(i,o);break;case r.SUBSCRIBE:for(var n=0;n&lt;this.topics.length;n++){o=p(this.topics[n],topicStrLength[n],a,o);a[o++]=this.requestedQos[n]}break;case r.UNSUBSCRIBE:for(var n=0;n&lt;this.topics.length;n++)o=p(this.topics[n],topicStrLength[n],a,o);break;default:}return u};var b=function(e,t,n){this._client=e;this._window=t;this._keepAliveInterval=n*1e3;this.isReset=false;var i=(new l(r.PINGREQ)).encode();var s=function(e){return function(){return u.apply(e)}};var u=function(){if(!this.isReset){this._client._trace(&quot;Pinger.doPing&quot;,&quot;Timed out&quot;);this._client._disconnected(o.PING_TIMEOUT.code,a(o.PING_TIMEOUT))}else{this.isReset=false;this._client._trace(&quot;Pinger.doPing&quot;,&quot;send PINGREQ&quot;);this._client.socket.send(i);this.timeout=this._window.setTimeout(s(this),this._keepAliveInterval)}};this.reset=function(){this.isReset=true;this._window.clearTimeout(this.timeout);if(this._keepAliveInterval&gt;0)this.timeout=setTimeout(s(this),this._keepAliveInterval)};this.cancel=function(){this._window.clearTimeout(this.timeout)}};var w=function(e,t,n,r,i){this._window=t;if(!n)n=30;var s=function(e,t,n){return function(){return e.apply(t,n)}};this.timeout=setTimeout(s(r,e,i),n*1e3);this.cancel=function(){this._window.clearTimeout(this.timeout)}};var E=function(t,n,r){if(!(&quot;WebSocket&quot;in e&amp;&amp;e[&quot;WebSocket&quot;]!==null)){throw new Error(a(o.UNSUPPORTED,[&quot;WebSocket&quot;]))}if(!(&quot;localStorage&quot;in e&amp;&amp;e[&quot;localStorage&quot;]!==null)){throw new Error(a(o.UNSUPPORTED,[&quot;localStorage&quot;]))}if(!(&quot;ArrayBuffer&quot;in e&amp;&amp;e[&quot;ArrayBuffer&quot;]!==null)){throw new Error(a(o.UNSUPPORTED,[&quot;ArrayBuffer&quot;]))}this._trace(&quot;Messaging.Client&quot;,t,n,r);this.host=t;this.port=n;this.clientId=r;this._localKey=t+&quot;:&quot;+n+&quot;:&quot;+r+&quot;:&quot;;this._msg_queue=[];this._sentMessages={};this._receivedMessages={};this._notify_msg_sent={};this._message_identifier=1;this._sequence=0;for(key in localStorage)if(key.indexOf(&quot;Sent:&quot;+this._localKey)==0||key.indexOf(&quot;Received:&quot;+this._localKey)==0)this.restore(key)};E.prototype.host;E.prototype.port;E.prototype.clientId;E.prototype.socket;E.prototype.connected=false;E.prototype.maxMessageIdentifier=65536;E.prototype.connectOptions;E.prototype.hostIndex;E.prototype.onConnectionLost;E.prototype.onMessageDelivered;E.prototype.onMessageArrived;E.prototype._msg_queue=null;E.prototype._connectTimeout;E.prototype.pinger=null;E.prototype._traceBuffer=null;E.prototype._MAX_TRACE_ENTRIES=100;E.prototype.connect=function(e){var t=this._traceMask(e,&quot;password&quot;);this._trace(&quot;Client.connect&quot;,t,this.socket,this.connected);if(this.connected)throw new Error(a(o.INVALID_STATE,[&quot;already connected&quot;]));if(this.socket)throw new Error(a(o.INVALID_STATE,[&quot;already connected&quot;]));this.connectOptions=e;if(e.hosts){this.hostIndex=0;this._doConnect(e.hosts[0],e.ports[0])}else{this._doConnect(this.host,this.port)}};E.prototype.subscribe=function(e,t){this._trace(&quot;Client.subscribe&quot;,e,t);if(!this.connected)throw new Error(a(o.INVALID_STATE,[&quot;not connected&quot;]));var n=new l(r.SUBSCRIBE);n.topics=[e];if(t.qos!=undefined)n.requestedQos=[t.qos];else n.requestedQos=[0];if(t.onSuccess){n.callback=function(){t.onSuccess({invocationContext:t.invocationContext})}}if(t.timeout){n.timeOut=new w(this,window,t.timeout,t.onFailure,[{invocationContext:t.invocationContext,errorCode:o.SUBSCRIBE_TIMEOUT.code,errorMessage:a(o.SUBSCRIBE_TIMEOUT)}])}this._requires_ack(n);this._schedule_message(n)};E.prototype.unsubscribe=function(e,t){this._trace(&quot;Client.unsubscribe&quot;,e,t);if(!this.connected)throw new Error(a(o.INVALID_STATE,[&quot;not connected&quot;]));var n=new l(r.UNSUBSCRIBE);n.topics=[e];if(t.onSuccess){n.callback=function(){t.onSuccess({invocationContext:t.invocationContext})}}if(t.timeout){n.timeOut=new w(this,window,t.timeout,t.onFailure,[{invocationContext:t.invocationContext,errorCode:o.UNSUBSCRIBE_TIMEOUT.code,errorMessage:a(o.UNSUBSCRIBE_TIMEOUT)}])}this._requires_ack(n);this._schedule_message(n)};E.prototype.send=function(e){this._trace(&quot;Client.send&quot;,e);if(!this.connected)throw new Error(a(o.INVALID_STATE,[&quot;not connected&quot;]));wireMessage=new l(r.PUBLISH);wireMessage.payloadMessage=e;if(e.qos&gt;0)this._requires_ack(wireMessage);else if(this.onMessageDelivered)this._notify_msg_sent[wireMessage]=this.onMessageDelivered(wireMessage.payloadMessage);this._schedule_message(wireMessage)};E.prototype.disconnect=function(){this._trace(&quot;Client.disconnect&quot;);if(!this.socket)throw new Error(a(o.INVALID_STATE,[&quot;not connecting or connected&quot;]));wireMessage=new l(r.DISCONNECT);this._notify_msg_sent[wireMessage]=s(this._disconnected,this);this._schedule_message(wireMessage)};E.prototype.getTraceLog=function(){if(this._traceBuffer!==null){this._trace(&quot;Client.getTraceLog&quot;,new Date);this._trace(&quot;Client.getTraceLog in flight messages&quot;,this._sentMessages.length);for(key in this._sentMessages)this._trace(&quot;_sentMessages &quot;,key,this._sentMessages[key]);for(key in this._receivedMessages)this._trace(&quot;_receivedMessages &quot;,key,this._receivedMessages[key]);return this._traceBuffer}};E.prototype.startTrace=function(){if(this._traceBuffer===null){this._traceBuffer=[]}this._trace(&quot;Client.startTrace&quot;,new Date,t)};E.prototype.stopTrace=function(){delete this._traceBuffer};E.prototype._doConnect=function(e,t){if(this.connectOptions.useSSL)wsurl=[&quot;wss://&quot;,e,&quot;:&quot;,t,&quot;/mqtt&quot;].join(&quot;&quot;);else wsurl=[&quot;ws://&quot;,e,&quot;:&quot;,t,&quot;/mqtt&quot;].join(&quot;&quot;);this.connected=false;this.socket=new WebSocket(wsurl,&quot;mqttv3.1&quot;);this.socket.binaryType=&quot;arraybuffer&quot;;this.socket.onopen=s(this._on_socket_open,this);this.socket.onmessage=s(this._on_socket_message,this);this.socket.onerror=s(this._on_socket_error,this);this.socket.onclose=s(this._on_socket_close,this);this.pinger=new b(this,window,this.connectOptions.keepAliveInterval);this._connectTimeout=new w(this,window,this.connectOptions.timeout,this._disconnected,[o.CONNECT_TIMEOUT.code,a(o.CONNECT_TIMEOUT)])};E.prototype._schedule_message=function(e){this._msg_queue.push(e);if(this.connected){this._process_queue()}};E.prototype.store=function(e,t){storedMessage={type:t.type,messageIdentifier:t.messageIdentifier,version:1};switch(t.type){case r.PUBLISH:if(t.pubRecReceived)storedMessage.pubRecReceived=true;storedMessage.payloadMessage={};var n=&quot;&quot;;var i=t.payloadMessage.payloadBytes;for(var s=0;s&lt;i.length;s++){if(i[s]&lt;=15)n=n+&quot;0&quot;+i[s].toString(16);else n=n+i[s].toString(16)}storedMessage.payloadMessage.payloadHex=n;storedMessage.payloadMessage.qos=t.payloadMessage.qos;storedMessage.payloadMessage.destinationName=t.payloadMessage.destinationName;if(t.payloadMessage.duplicate)storedMessage.payloadMessage.duplicate=true;if(t.payloadMessage.retained)storedMessage.payloadMessage.retained=true;if(e.indexOf(&quot;Sent:&quot;)==0){if(t.sequence===undefined)t.sequence=++this._sequence;storedMessage.sequence=t.sequence}break;default:throw Error(a(o.INVALID_STORED_DATA,[key,storedMessage]))}localStorage.setItem(e+this._localKey+t.messageIdentifier,JSON.stringify(storedMessage))};E.prototype.restore=function(e){var t=localStorage.getItem(e);var n=JSON.parse(t);var i=new l(n.type,n);switch(n.type){case r.PUBLISH:var s=n.payloadMessage.payloadHex;var u=new ArrayBuffer(s.length/2);var f=new Uint8Array(u);var c=0;while(s.length&gt;=2){var h=parseInt(s.substring(0,2),16);s=s.substring(2,s.length);f[c++]=h}var p=new Messaging.Message(f);p.qos=n.payloadMessage.qos;p.destinationName=n.payloadMessage.destinationName;if(n.payloadMessage.duplicate)p.duplicate=true;if(n.payloadMessage.retained)p.retained=true;i.payloadMessage=p;break;default:throw Error(a(o.INVALID_STORED_DATA,[e,t]))}if(e.indexOf(&quot;Sent:&quot;+this._localKey)==0){this._sentMessages[i.messageIdentifier]=i}else if(e.indexOf(&quot;Received:&quot;+this._localKey)==0){this._receivedMessages[i.messageIdentifier]=i}};E.prototype._process_queue=function(){var e=null;var t=this._msg_queue.reverse();while(e=t.pop()){this._socket_send(e);if(this._notify_msg_sent[e]){this._notify_msg_sent[e]();delete this._notify_msg_sent[e]}}};E.prototype._requires_ack=function(e){var t=Object.keys(this._sentMessages).length;if(t&gt;this.maxMessageIdentifier)throw Error(&quot;Too many messages:&quot;+t);while(this._sentMessages[this._message_identifier]!==undefined){this._message_identifier++}e.messageIdentifier=this._message_identifier;this._sentMessages[e.messageIdentifier]=e;if(e.type===r.PUBLISH){this.store(&quot;Sent:&quot;,e)}if(this._message_identifier===this.maxMessagIdentifier){this._message_identifier=1}};E.prototype._on_socket_open=function(){var e=new l(r.CONNECT,this.connectOptions);e.clientId=this.clientId;this._socket_send(e)};E.prototype._on_socket_message=function(e){this._trace(&quot;Client._on_socket_message&quot;,e.data);this.pinger.reset();var t=new Uint8Array(e.data);try{var n=c(t)}catch(i){this._disconnected(o.INTERNAL_ERROR.code,a(o.INTERNAL_ERROR,[i.message]));return}this._trace(&quot;Client._on_socket_message&quot;,n);switch(n.type){case r.CONNACK:this._connectTimeout.cancel();if(this.connectOptions.cleanSession){for(key in this._sentMessages){var s=this._sentMessages[key];localStorage.removeItem(&quot;Sent:&quot;+this._localKey+s.messageIdentifier)}this._sentMessages={};for(key in this._receivedMessages){var f=this._receivedMessages[key];localStorage.removeItem(&quot;Received:&quot;+this._localKey+f.messageIdentifier)}this._receivedMessages={}}if(n.returnCode===0){this.connected=true}else{this._disconnected(o.CONNACK_RETURNCODE.code,a(o.CONNACK_RETURNCODE,[n.returnCode,u[n.returnCode]]));break}var h=new Array;for(var p in this._sentMessages){if(this._sentMessages.hasOwnProperty(p))h.push(this._sentMessages[p])}var h=h.sort(function(e,t){return e.sequence-t.sequence});for(var d=0,v=h.length;d&lt;v;d++){var s=h[d];if(s.type==r.PUBLISH&amp;&amp;s.pubRecReceived){var m=new l(r.PUBREL,{messageIdentifier:s.messageIdentifier});this._schedule_message(m)}else{this._schedule_message(s)}}if(this.connectOptions.onSuccess){this.connectOptions.onSuccess({invocationContext:this.connectOptions.invocationContext})}this._process_queue();break;case r.PUBLISH:this._receivePublish(n);break;case r.PUBACK:var s=this._sentMessages[n.messageIdentifier];if(s){delete this._sentMessages[n.messageIdentifier];localStorage.removeItem(&quot;Sent:&quot;+this._localKey+n.messageIdentifier);if(this.onMessageDelivered)this.onMessageDelivered(s.payloadMessage)}break;case r.PUBREC:var s=this._sentMessages[n.messageIdentifier];if(s){s.pubRecReceived=true;var m=new l(r.PUBREL,{messageIdentifier:n.messageIdentifier});this.store(&quot;Sent:&quot;,s);this._schedule_message(m)}break;case r.PUBREL:var f=this._receivedMessages[n.messageIdentifier];localStorage.removeItem(&quot;Received:&quot;+this._localKey+n.messageIdentifier);if(f){this._receiveMessage(f);delete this._receivedMessages[n.messageIdentifier]}pubCompMessage=new l(r.PUBCOMP,{messageIdentifier:n.messageIdentifier});this._schedule_message(pubCompMessage);break;case r.PUBCOMP:var s=this._sentMessages[n.messageIdentifier];delete this._sentMessages[n.messageIdentifier];localStorage.removeItem(&quot;Sent:&quot;+this._localKey+n.messageIdentifier);if(this.onMessageDelivered)this.onMessageDelivered(s.payloadMessage);break;case r.SUBACK:var s=this._sentMessages[n.messageIdentifier];if(s){if(s.timeOut)s.timeOut.cancel();if(s.callback){s.callback()}delete this._sentMessages[n.messageIdentifier]}break;case r.UNSUBACK:var s=this._sentMessages[n.messageIdentifier];if(s){if(s.timeOut)s.timeOut.cancel();if(s.callback){s.callback()}delete this._sentMessages[n.messageIdentifier]}break;case r.PINGRESP:break;case r.DISCONNECT:this._disconnected(o.INVALID_MQTT_MESSAGE_TYPE.code,a(o.INVALID_MQTT_MESSAGE_TYPE,[n.type]));break;default:this._disconnected(o.INVALID_MQTT_MESSAGE_TYPE.code,a(o.INVALID_MQTT_MESSAGE_TYPE,[n.type]))}};E.prototype._on_socket_error=function(e){this._disconnected(o.SOCKET_ERROR.code,a(o.SOCKET_ERROR,[e.data]))};E.prototype._on_socket_close=function(){this._disconnected(o.SOCKET_CLOSE.code,a(o.SOCKET_CLOSE))};E.prototype._socket_send=function(e){if(e.type==1){var t=this._traceMask(e,&quot;password&quot;);this._trace(&quot;Client._socket_send&quot;,t)}else this._trace(&quot;Client._socket_send&quot;,e);this.socket.send(e.encode());this.pinger.reset()};E.prototype._receivePublish=function(e){switch(e.payloadMessage.qos){case&quot;undefined&quot;:case 0:this._receiveMessage(e);break;case 1:var t=new l(r.PUBACK,{messageIdentifier:e.messageIdentifier});this._schedule_message(t);this._receiveMessage(e);break;case 2:this._receivedMessages[e.messageIdentifier]=e;this.store(&quot;Received:&quot;,e);var n=new l(r.PUBREC,{messageIdentifier:e.messageIdentifier});this._schedule_message(n);break;default:throw Error(&quot;Invaild qos=&quot;+wireMmessage.payloadMessage.qos)}};E.prototype._receiveMessage=function(e){if(this.onMessageArrived){this.onMessageArrived(e.payloadMessage)}};E.prototype._disconnected=function(e,t){this.pinger.cancel();if(this._connectTimeout)this._connectTimeout.cancel();this._msg_queue=[];this._notify_msg_sent={};if(this.socket){this.socket.onopen=null;this.socket.onmessage=null;this.socket.onerror=null;this.socket.onclose=null;this.socket.close();delete this.socket}if(this.connectOptions.hosts&amp;&amp;this.hostIndex&lt;this.connectOptions.hosts.length-1){this.hostIndex++;this._doConnect(this.connectOptions.hosts[this.hostIndex],this.connectOptions.ports[this.hostIndex])}else{if(e===undefined){e=o.OK.code;errroText=a(o.OK)}if(this.connected){this.connected=false;if(this.onConnectionLost)this.onConnectionLost({errorCode:e,errorMessage:t})}else{if(this.connectOptions.onFailure)this.connectOptions.onFailure({invocationContext:this.connectOptions.invocationContext,errorCode:e,errorMessage:t})}}};E.prototype._trace=function(){if(this._traceBuffer!==null){for(var e=0,t=arguments.length;e&lt;t;e++){if(this._traceBuffer.length==this._MAX_TRACE_ENTRIES){this._traceBuffer.shift()}if(e===0)this._traceBuffer.push(arguments[e]);else if(typeof arguments[e]===&quot;undefined&quot;)this._traceBuffer.push(arguments[e]);else this._traceBuffer.push(&quot;  &quot;+JSON.stringify(arguments[e]))}}};E.prototype._traceMask=function(e,t){var n={};for(var r in e){if(e.hasOwnProperty(r)){if(r==t)n[r]=&quot;******&quot;;else n[r]=e[r]}}return n};var S=function(e,t,n){if(typeof e!==&quot;string&quot;)throw new Error(a(o.INVALID_TYPE,[typeof e,&quot;host&quot;]));if(typeof t!==&quot;number&quot;||t&lt;0)throw new Error(a(o.INVALID_TYPE,[typeof t,&quot;port&quot;]));var r=0;for(var s=0;s&lt;n.length;s++){var u=n.charCodeAt(s);if(55296&lt;=u&amp;&amp;u&lt;=56319){s++}r++}if(typeof n!==&quot;string&quot;||r&lt;1|r&gt;23)throw new Error(a(o.INVALID_ARGUMENT,[n,&quot;clientId&quot;]));var f=new E(e,t,n);this._getHost=function(){return f.host};this._setHost=function(){throw new Error(a(o.UNSUPPORTED_OPERATION))};this._getPort=function(){return f.port};this._setPort=function(){throw new Error(a(o.UNSUPPORTED_OPERATION))};this._getClientId=function(){return f.clientId};this._setClientId=function(){throw new Error(a(o.UNSUPPORTED_OPERATION))};this._getOnConnectionLost=function(){return f.onConnectionLost};this._setOnConnectionLost=function(e){if(typeof e===&quot;function&quot;)f.onConnectionLost=e;else throw new Error(a(o.INVALID_TYPE,[typeof e,&quot;onConnectionLost&quot;]))};this._getOnMessageDelivered=function(){return f.onMessageDelivered};this._setOnMessageDelivered=function(e){if(typeof e===&quot;function&quot;)f.onMessageDelivered=e;else throw new Error(a(o.INVALID_TYPE,[typeof e,&quot;onMessageDelivered&quot;]))};this._getOnMessageArrived=function(){return f.onMessageArrived};this._setOnMessageArrived=function(e){if(typeof e===&quot;function&quot;)f.onMessageArrived=e;else throw new Error(a(o.INVALID_TYPE,[typeof e,&quot;onMessageArrived&quot;]))};this.connect=function(e){e=e||{};i(e,{timeout:&quot;number&quot;,userName:&quot;string&quot;,password:&quot;string&quot;,willMessage:&quot;object&quot;,keepAliveInterval:&quot;number&quot;,cleanSession:&quot;boolean&quot;,useSSL:&quot;boolean&quot;,invocationContext:&quot;object&quot;,onSuccess:&quot;function&quot;,onFailure:&quot;function&quot;,hosts:&quot;object&quot;,ports:&quot;object&quot;});if(e.keepAliveInterval===undefined)e.keepAliveInterval=60;if(e.willMessage){if(!(e.willMessage instanceof x))throw new Error(a(o.INVALID_TYPE,[e.willMessage,&quot;connectOptions.willMessage&quot;]));e.willMessage.stringPayload;if(typeof e.willMessage.destinationName===&quot;undefined&quot;)throw new Error(a(o.INVALID_TYPE,[typeof e.willMessage.destinationName,&quot;connectOptions.willMessage.destinationName&quot;]))}if(typeof e.cleanSession===&quot;undefined&quot;)e.cleanSession=true;if(e.hosts){if(!e.ports)throw new Error(a(o.INVALID_ARGUMENT,[e.ports,&quot;connectOptions.ports&quot;]));if(!(e.hosts instanceof Array))throw new Error(a(o.INVALID_ARGUMENT,[e.hosts,&quot;connectOptions.hosts&quot;]));if(!(e.ports instanceof Array))throw new Error(a(o.INVALID_ARGUMENT,[e.ports,&quot;connectOptions.ports&quot;]));if(e.hosts.length&lt;1)throw new Error(a(o.INVALID_ARGUMENT,[e.hosts,&quot;connectOptions.hosts&quot;]));if(e.hosts.length!=e.ports.length)throw new Error(a(o.INVALID_ARGUMENT,[e.ports,&quot;connectOptions.ports&quot;]));for(var t=0;t&lt;e.hosts.length;t++){if(typeof e.hosts[t]!==&quot;string&quot;)throw new Error(a(o.INVALID_TYPE,[typeof e.hosts[t],&quot;connectionstions.hosts[&quot;+t+&quot;]&quot;]));if(typeof e.ports[t]!==&quot;number&quot;||e.ports[t]&lt;0)throw new Error(a(o.INVALID_TYPE,[typeof e.ports[t],&quot;connectionstions.ports[&quot;+t+&quot;]&quot;]))}}f.connect(e)};this.subscribe=function(e,t){if(typeof e!==&quot;string&quot;)throw new Error(&quot;Invalid argument:&quot;+e);t=t||{};i(t,{qos:&quot;number&quot;,invocationContext:&quot;object&quot;,onSuccess:&quot;function&quot;,onFailure:&quot;function&quot;,timeout:&quot;number&quot;});if(t.timeout&amp;&amp;!t.onFailure)throw new Error(&quot;subscribeOptions.timeout specified with no onFailure callback.&quot;);if(typeof t.qos!==&quot;undefined&quot;&amp;&amp;!(t.qos===0||t.qos===1||t.qos===2))throw new Error(a(o.INVALID_ARGUMENT,[t.qos,&quot;subscribeOptions.qos&quot;]));f.subscribe(e,t)};this.unsubscribe=function(e,t){if(typeof e!==&quot;string&quot;)throw new Error(&quot;Invalid argument:&quot;+e);t=t||{};i(t,{invocationContext:&quot;object&quot;,onSuccess:&quot;function&quot;,onFailure:&quot;function&quot;,timeout:&quot;number&quot;});if(t.timeout&amp;&amp;!t.onFailure)throw new Error(&quot;unsubscribeOptions.timeout specified with no onFailure callback.&quot;);f.unsubscribe(e,t)};this.send=function(e){if(!(e instanceof x))throw new Error(&quot;Invalid argument:&quot;+typeof e);if(typeof e.destinationName===&quot;undefined&quot;)throw new Error(&quot;Invalid parameter Message.destinationName:&quot;+e.destinationName);f.send(e)};this.disconnect=function(){f.disconnect()};this.getTraceLog=function(){return f.getTraceLog()};this.startTrace=function(){f.startTrace()};this.stopTrace=function(){f.stopTrace()}};S.prototype={get host(){return this._getHost()},set host(e){this._setHost(e)},get port(){return this._getPort()},set port(e){this._setPort(e)},get clientId(){return this._getClientId()},set clientId(e){this._setClientId(e)},get onConnectionLost(){return this._getOnConnectionLost()},set onConnectionLost(e){this._setOnConnectionLost(e)},get onMessageDelivered(){return this._getOnMessageDelivered()},set onMessageDelivered(e){this._setOnMessageDelivered(e)},get onMessageArrived(){return this._getOnMessageArrived()},set onMessageArrived(e){this._setOnMessageArrived(e)}};var x=function(e){var t;if(typeof e===&quot;string&quot;||e instanceof ArrayBuffer||e instanceof Int8Array||e instanceof Uint8Array||e instanceof Int16Array||e instanceof Uint16Array||e instanceof Int32Array||e instanceof Uint32Array||e instanceof Float32Array||e instanceof Float64Array){t=e}else{throw a(o.INVALID_ARGUMENT,[e,&quot;newPayload&quot;])}this._getPayloadString=function(){if(typeof t===&quot;string&quot;)return t;else return y(t,0,t.length)};this._getPayloadBytes=function(){if(typeof t===&quot;string&quot;){var e=new ArrayBuffer(m(t));var n=new Uint8Array(e);g(t,n,0);return n}else{return t}};var n=undefined;this._getDestinationName=function(){return n};this._setDestinationName=function(e){if(typeof e===&quot;string&quot;)n=e;else throw new Error(a(o.INVALID_ARGUMENT,[e,&quot;newDestinationName&quot;]))};var r=0;this._getQos=function(){return r};this._setQos=function(e){if(e===0||e===1||e===2)r=e;else throw new Error(&quot;Invalid argument:&quot;+e)};var i=false;this._getRetained=function(){return i};this._setRetained=function(e){if(typeof e===&quot;boolean&quot;)i=e;else throw new Error(a(o.INVALID_ARGUMENT,[e,&quot;newRetained&quot;]))};var s=false;this._getDuplicate=function(){return s};this._setDuplicate=function(e){s=e}};x.prototype={get payloadString(){return this._getPayloadString()},get payloadBytes(){return this._getPayloadBytes()},get destinationName(){return this._getDestinationName()},set destinationName(e){this._setDestinationName(e)},get qos(){return this._getQos()},set qos(e){this._setQos(e)},get retained(){return this._getRetained()},set retained(e){this._setRetained(e)},get duplicate(){return this._getDuplicate()},set duplicate(e){this._setDuplicate(e)}};return{Client:S,Message:x}}(window)
-var randNum = 'x' + Math.floor((Math.random() * 10000) + 1);
-client = new Messaging.Client('hausenfefr.com', Number('1884'), randNum);
+var randNum = &apos;x&apos; + Math.floor((Math.random() * 10000) + 1);
+client = new Messaging.Client(&apos;hausenfefr.com&apos;, Number(&apos;1884&apos;), randNum);
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 client.connect({onSuccess:onConnect, useSSL: true});
@@ -44,132 +42,42 @@ function sendit(chan,msg)
 	message = new Messaging.Message(msg);
 	message.destinationName = chan;
         client.send(message);
-	console.log('sent:' + message.destinationName + '  ' +message.payloadString);
+	console.log(&apos;sent:&apos; + message.destinationName + &apos;  &apos; +message.payloadString);
 }
 function mouseover(obj)
 {
-obj.style.fill='#666666';
+obj.style.fill=&apos;#666666&apos;;
 }
 function mouseout(obj)
 {
-obj.style.fill='#999999';
-obj.style['stroke-width'] = 0;
+obj.style.fill=&apos;#999999&apos;;
+obj.style[&apos;stroke-width&apos;] = 0;
 }
 function mousedown(obj)
 {
-obj.style.stroke = '#666666';
-obj.style['stroke-width'] = 2;
+obj.style.stroke = &apos;#666666&apos;;
+obj.style[&apos;stroke-width&apos;] = 2;
 }
 function mouseup(obj)
 {
-obj.style['stroke-width'] = 0;
-}</script>
-  <defs
-     id="defs5066" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1.115625"
-     inkscape:cx="160"
-     inkscape:cy="320"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     units="px"
-     inkscape:snap-page="true"
-     inkscape:window-width="1600"
-     inkscape:window-height="881"
-     inkscape:window-x="-4"
-     inkscape:window-y="-4"
-     inkscape:window-maximized="1" />
-  <metadata
-     id="metadata5069">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-127.66665)">
-    <rect
-       style="opacity:1;fill:#ececec;fill-opacity:1;stroke:none;stroke-width:0.5291667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect6735"
-       width="84.666672"
-       height="155.81512"
-       x="0"
-       y="141.18486"
-       ry="0" />
-    <rect
-       style="opacity:1;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.52916664;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect5617"
-       width="84.666664"
-       height="13.518208"
-       x="0"
-       y="127.66665" />
-    <rect
-       style="opacity:1;fill:#d45500;fill-opacity:1;stroke:none;stroke-width:0.32561633;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="statusLED"
-       width="9.249299"
-       height="7.8263307"
-       x="72.37133"
-       y="130.31252"
-       inkscape:label="#statusLED" />
-    <rect
-       style="cursor:pointer;opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.5291667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect5631-3-5"
-       width="36.048557"
-       height="27.747898"
-       x="4.8158636"
-       y="147.58821"
-       ry="4.0317459"
-       onclick="sendit('/yup','yup');"
-       onmouseover="mouseover(this);"
-       onmouseout="mouseout(this);"
-       onmousedown="mousedown(this);"
-       onmouseup="mouseup(this);" />
-    <rect
-       style="opacity:1;fill:#e9c6af;fill-opacity:0.79847909;stroke:none;stroke-width:0.5291667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect8306"
-       width="84.666672"
-       height="13.341414"
-       x="0"
-       y="283.65857"
-       ry="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.75093126px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.11877328"
-       x="2.269222"
-       y="288.97681"
-       id="text8310"><tspan
-         sodipodi:role="line"
-         id="messagedisplay"
-         x="2.269222"
-         y="288.97681"
-         style="stroke-width:0.11877328">...</tspan></text>
-    <rect
-       onmouseup="mouseup(this);"
-       onmousedown="mousedown(this);"
-       onmouseout="mouseout(this);"
-       onmouseover="mouseover(this);"
-       onclick="sendit('/uhhuh','uh huh');"
-       ry="4.0317459"
-       y="147.58821"
-       x="43.974197"
-       height="27.747898"
-       width="36.048557"
-       id="rect8312"
-       style="opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.5291667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  </g>
+obj.style[&apos;stroke-width&apos;] = 0;
+}
+	</script>
+<sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" id="base" inkscape:current-layer="layer1" inkscape:cx="160" inkscape:cy="320" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:snap-page="true" inkscape:window-height="881" inkscape:window-maximized="1" inkscape:window-width="1600" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:zoom="1.115625" pagecolor="#ffffff" showgrid="false" units="px">
+	</sodipodi:namedview>
+<rect id="rect6735" x="0" y="51.1" class="st0" width="320" height="588.9"/>
+<rect id="rect5617" x="0" class="st1" width="320" height="51.1"/>
+<rect id="statusLED" x="273.5" y="10" inkscape:label="#statusLED" class="st2" width="35" height="29.6">
+</rect>
+<path id="rect5631-3-5" onmousedown="mousedown(this);" onmouseup="mouseup(this);" onclick="sendit('/yup','yup');" onmouseover="mouseover(this);" onmouseout="mouseout(this);" class="st3" d="
+	M33.4,75.3h105.8c8.4,0,15.2,6.8,15.2,15.2v74.4c0,8.4-6.8,15.2-15.2,15.2H33.4c-8.4,0-15.2-6.8-15.2-15.2V90.5
+	C18.2,82.1,25,75.3,33.4,75.3z"/>
+<rect id="rect8306" x="0" y="589.6" class="st4" width="320" height="50.4"/>
+<text transform="matrix(1 0 0 1 8.5762 609.6758)" class="st5 st6">...</text>
+<path id="rect8312" onmousedown="mousedown(this);" onmouseup="mouseup(this);" onclick="sendit('/uhhuh','uh huh');" onmouseover="mouseover(this);" onmouseout="mouseout(this);" class="st3" d="
+	M181.4,75.3h105.8c8.4,0,15.2,6.8,15.2,15.2v74.4c0,8.4-6.8,15.2-15.2,15.2H181.4c-8.4,0-15.2-6.8-15.2-15.2V90.5
+	C166.2,82.1,173,75.3,181.4,75.3z"/>
+<path id="rect8312_1_" onmousedown="mousedown(this);" onmouseup="mouseup(this);" onclick="sendit('/crystal','crystal');" onmouseover="mouseover(this);" onmouseout="mouseout(this);" class="st3" d="
+	M181.4,195.3h105.8c8.4,0,15.2,6.8,15.2,15.2v74.4c0,8.4-6.8,15.2-15.2,15.2H181.4c-8.4,0-15.2-6.8-15.2-15.2v-74.4
+	C166.2,202.1,173,195.3,181.4,195.3z"/>
 </svg>
